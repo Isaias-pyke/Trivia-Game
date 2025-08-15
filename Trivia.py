@@ -5,6 +5,8 @@ from PIL import Image, ImageTk
 import os  
 import sys
 
+nombre_jugador = input("Bienvenido al lugar de tu prueba,Di tu nombre: ")
+
 def resource_path(relative_path):
     """ Obtiene ruta absoluta al recurso para PyInstaller """
     try:
@@ -317,6 +319,7 @@ class TriviaGUI:
         canvas.create_text(400, 150, text="¡Fin del Juego!", font=self.fuente_titulo, fill=COLOR_TEXTO)
 
         # Calcular puntuación y promedio
+print(f"\n¡Aca tu puntuacion, {nombre_jugador}! Tu oportunidad llego a su fin.")
         total_preguntas = len(self.preguntas)
         puntuacion_final = self.puntuacion
         
@@ -339,4 +342,5 @@ class TriviaGUI:
 if __name__ == "__main__":
     ventana_principal = tk.Tk()
     app = TriviaGUI(ventana_principal)
+
     ventana_principal.mainloop()
